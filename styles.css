@@ -1,0 +1,117 @@
+:root{
+    --background: #000000;
+    --color: #FFFFFF;
+    --font-fam: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--color);
+    font-family: var(--font-fam);
+    /* Stops the shapes from overflowing/creating scroll bars */
+    overflow: hidden;
+}
+
+/* Center main content */
+.main-page-container{
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100%;  
+}
+
+/* The below first attempt works to an extent, will fix scaling issue and more */
+/* Set as svg instead, set font size to stop vw effecting thickness of circle?? */
+#circle-top-left{
+    position: absolute;
+    top: -40vw;
+    left: -20vw;
+    padding: 0%;
+    margin: 0%;
+    height: 50vw;
+}
+
+#circle-bottom-left{
+    position: absolute;
+    bottom: -20vw;
+    left: -20vw;
+    padding: 0%;
+    margin: 0%;
+    height: 30vw;
+}
+
+#circle-top-right{
+    position: absolute;
+    top: -10vw;
+    right: -49vw;
+    padding: 0%;
+    margin: 0%;
+    height: 80vw;
+}
+/* ^^^^^ Set as svg instead, set font size to stop vw effecting thickness of circle?? */
+
+/* Aligns vertically the logo, header, slogan, button and last paragraph */
+.items-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+img{
+    margin: 25px;
+}
+
+/* Set the first paragraphs font weight */
+.items-container > #para-one{
+    font-weight: 100;
+    font-size: 24px;
+}
+
+/* Set the second paragraphs font weight */
+.items-container > #para-two{
+    font-weight: 700;
+    font-size: 20px;
+    position: absolute;
+    bottom: -75%;
+}
+
+.items-container > button{
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 14rem;
+    height: 4rem;
+}
+
+
+/* Responsive CSS - Common Break-points taken from free code camp */
+
+/*  
+
+    320px — 480px: Mobile devices
+    481px — 768px: iPads, Tablets
+    769px — 1024px: Small screens, laptops
+    1025px — 1200px: Desktops, large screens
+    1201px and more —  Extra large screens, TV
+    
+
+    Landscape and Portrait needs to be taken into account
+*/
+
+/* 
+@media screen and (max-width: 480px) {
+
+    
+} */
+
