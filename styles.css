@@ -74,7 +74,22 @@ body{
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 4rem;
+    padding: 4rem;    
+}
+
+/* Animation */
+.reveal{
+    will-change: transform;
+    will-change: transition;
+
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+        transition: all 1s;
+        /* Adding in x and y i.e. translateY(-3em, -3em) fixed mozilla glitch but created chrome bug where #para-two is not animated in chrome*/
+    -webkit-transform: translateY(3em, -3em);
+    -moz-transform: translateY(-3em, -3em);
+        transform: translateY(-3em, -3em);
 }
 
 img{
