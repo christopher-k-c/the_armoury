@@ -11,17 +11,24 @@ body{
     color: var(--color);
     font-family: var(--font-fam);
     /* Stops the shapes from overflowing/creating scroll bars */
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* Center main content */
 .main-page-container{
-    position: static;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height:100vh;
-    width: 100%;  
 }
 
 /* The below first attempt works to an extent, will fix scaling issue and more */
@@ -33,14 +40,16 @@ body{
     padding: 0%;
     margin: 0%;
     height: 50vw;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 3;
 }
 
 #circle-bottom-left{
     position: absolute;
     bottom: -20vw;
     left: -20vw;
-    padding: 0%;
-    margin: 0%;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 5;
     height: 30vw;
 }
 
@@ -52,7 +61,11 @@ body{
     margin: 0%;
     height: 80vw;
 }
-/* ^^^^^ Set as svg instead, set font size to stop vw effecting thickness of circle?? */
+
+.top-right-shapes{
+    stroke: rgb(255, 255, 255);
+    stroke-width: 3;
+}
 
 /* Aligns vertically the logo, header, slogan, button and last paragraph */
 .items-container{
@@ -61,10 +74,12 @@ body{
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 4rem;
 }
 
 img{
     margin: 25px;
+    max-width: 100%;
 }
 
 /* Set the first paragraphs font weight */
@@ -77,8 +92,8 @@ img{
 .items-container > #para-two{
     font-weight: 700;
     font-size: 20px;
-    position: absolute;
-    bottom: -75%;
+    position: fixed;
+    bottom: 2rem;
 }
 
 .items-container > button{
@@ -94,24 +109,141 @@ img{
     height: 4rem;
 }
 
+@media screen and (max-width: 1320px) {
+    #circle-top-left{
+        top: -60vw;
+        left: -50vw;
+        height: 95vw;
+        stroke-width: 4;
+    }
+    #circle-bottom-left{
+        bottom: -30vw;
+        left: -30vw;
+        height: 60vw;
+        stroke-width: 7;
+    }
+    .top-right-shapes{
+        top: -10vw;
+        right: -49vw;
+        padding: 0%;
+        margin: 0%;
+        height: 80vw;
+        stroke-width: 7;
+    }
+}
 
-/* Responsive CSS - Common Break-points taken from free code camp */
+@media screen and (max-width: 1317px) {
+    #circle-top-left{
+        top: -60vw;
+        left: -65vw;
+        stroke-width: 4;
+    }
+    #circle-top-right{
+        top: -10vw;
+        right: -39vw;
+        padding: 0%;
+        margin: 0%;
+        height: 65vw;
+    }
+    .top-right-shapes{
+        stroke-width: 8;
+    }    
+}
 
-/*  
+@media screen and (max-height: 508px){
+    .items-container{
+        /* Scales contents down */
+        max-height: 100%;
+        zoom: 0.5;
+        -moz-transform: scale(0.5);
+    }
+    .items-container > #para-two{
+    }
+}
 
-    320px — 480px: Mobile devices
-    481px — 768px: iPads, Tablets
-    769px — 1024px: Small screens, laptops
-    1025px — 1200px: Desktops, large screens
-    1201px and more —  Extra large screens, TV
-    
+@media screen and (max-width: 500px) {
+    #armoury-logo{
+        max-width: 8rem;
+        margin: 0;
+    }
+    .items-container > #para-one{
+        font-size: 0.8em;
+    }
+    .items-container > button{
+        width: 100%;
+        height: 3rem;
+        margin: 0;
+        padding: 0;
+        font-size: 0.8em;
+    }
+    .items-container > #para-two{
+        font-size: 0.8em;
+    }
+    #circle-bottom-left{
+        bottom: -30vw;
+        left: 70vw;
+    }
+}
 
-    Landscape and Portrait needs to be taken into account
-*/
-
-/* 
+/* Iphone XR / S20 */
 @media screen and (max-width: 480px) {
+    #circle-top-left{
+        stroke-width: 9;
+        top: -20%;
+        left: -30;
+    }
+    #circle-bottom-left{
+        height: 200vw;
+        bottom: -180vw;
+        left: 30vw;
+        stroke-width: 4;
+    }
+    #circle-top-right, .top-right-shapes{
+        stroke-width: 12;
+        top: -17vw;
+        right: -65vw;
+        height: 105vw;
+    }
+    #armoury-title{
+        padding:  0 0 2rem 0;
+    }
+    button{
+        margin: 0 0 0 0;
+    }
+}
 
-    
-} */
 
+/* Iphone SE / S8 */
+@media screen and (max-width: 380px) {
+    #circle-top-left{
+        stroke-width: 9;
+    }
+    #circle-bottom-left{
+        height: 200vw;
+        bottom: -180vw;
+        left: 30vw;
+        stroke-width: 4;
+    }
+    #circle-top-right, .top-right-shapes{
+        stroke-width: 13;
+        top: -10vw;
+        right: -54vw;
+        height:85vw;
+    }
+    #armoury-title{
+        padding:  0 0 0 0;
+    }
+}
+
+/* Galaxy Fold */
+@media screen and (max-width: 280px) {
+    .items-container {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 595px) and (max-height: 595px)  {
+    #circle-bottom-left{
+        display:none;
+    }
+}
