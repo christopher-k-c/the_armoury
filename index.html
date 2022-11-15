@@ -4,14 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/armoury.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     
     <title>The Armoury</title>
 </head>
-<body>
+<body> 
+        <div class="burger-menu" onclick="modal()">
+            <div  class="line" ></div>
+            <div  class="line" ></div>   
+            <div  class="line" ></div>
+        </div>
+
+        <div id="modal" class="modal-container" style="display: none;">
+            
+            <ul class="initial-navaigation">
+                <li>Our Work</li>
+                <li>Our Services</li>
+                <li>About</li>
+                <li>Jobs & Careers</li>
+                <li>The Armoury News & Blog</li>
+                <li>Contact</li>
+            </ul>
+
+            <hr>
+
+            <div class="secondary-nav">
+                <ul class="info">
+                    <li>WE DO STRATEGY</li>
+                    <li>Brand Strategy</li>
+                    <li>Digital & eCommerce Strategy</li>
+                    <li>Business Planning & Forecasting</li>
+                </ul>
+
+                <ul class="info">
+                    <li>WE DO STRATEGY</li>
+                    <li>Brand Strategy</li>
+                    <li>Digital & eCommerce Strategy</li>
+                    <li>Business Planning & Forecasting</li>
+                </ul>
+
+                <ul class="info">
+                    <li>WE DO STRATEGY</li>
+                    <li>Brand Strategy</li>
+                    <li>Digital & eCommerce Strategy</li>
+                    <li>Business Planning & Forecasting</li>
+                </ul>
+
+                <ul class="info">
+                    <li>WE DO STRATEGY</li>
+                    <li>Brand Strategy</li>
+                    <li>Digital & eCommerce Strategy</li>
+                    <li>Business Planning & Forecasting</li>
+                </ul>
+            </div>
+
+<div class="container">
+    <div class="row">
+            <div class="card col" >
+                <img src="/the_armoury/assets/1.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card col" >
+                <img src="/the_armoury/assets/2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card col" >
+                <img src="/the_armoury/assets/3.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+
     
     <div class="main-page-container">
 
@@ -47,7 +131,7 @@
             <img id="armoury-logo" class="reveal" src="/the_armoury/assets/armoury_1.svg" alt="logo">
             <img id="armoury-title" class="reveal" src="/the_armoury/assets/armoury_2.svg" alt="brand-title">
             <p class="reveal" id="para-one">WE MAKE THE DIFFERENCE</p>
-            <button class="reveal" >FIND OUT HOW</button>
+            <button class="reveal" onclick="modal()">FIND OUT HOW</button>
             <p class="reveal" id="para-two">STRATERGY | CREATIVE | MARKETING</p>
         </div>
 

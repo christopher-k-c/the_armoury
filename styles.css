@@ -5,6 +5,8 @@
 }
 
 body{
+
+    position: static;
     margin: 0;
     padding: 0;
     background-color: var(--background);
@@ -17,6 +19,146 @@ body{
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+            
+}
+
+
+
+.burger-menu{
+
+    display: block;
+    position: fixed;
+    z-index:3;
+    top: 0;
+    right: 0;
+    padding: 1rem 1rem 0 0;
+    cursor: pointer;
+
+}
+
+.burger-menu > .line{
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    margin: 0 0 0.5rem 0;
+
+}
+
+#modal{
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    width: 60%;
+    height: 100vh;
+    background-color:#333;
+    padding: 3rem 3rem 0 0;
+}
+
+
+#darken{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.899);
+    z-index: 1;
+    
+}
+
+
+#modal > ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* padding: 3rem 3rem 0 0; */
+}
+
+#modal > .initial-navaigation > li{
+    margin: 0 0 1rem 0;
+}
+
+#modal > ul > li, .secondary-nav > ul > li{
+    list-style: none;
+    font-size: 1.5rem;
+
+    /* Need to review */
+    display: inline-block;
+    position: relative;
+}
+
+#modal > hr {
+    padding: 0;
+    margin: 3rem 0 1rem 3rem;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.secondary-nav {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-nav > ul > li{
+    font-size: 1rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+/* .secondary-nav > ul > li:first-child{
+    display: block;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+} */
+
+/* Need to review */
+ul > li::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+    margin: 0 0 0.7rem 0;
+}
+/* Need to review */
+ ul > li:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    padding: 0;
+    margin: 0 0 0.7rem 0;
+}
+
+.initial-navaigation > li::after{
+    margin: 0 0 0rem 0;
+}
+
+.initial-navaigation > li:hover::after{
+    margin: 0 0 0rem 0;
+}
+
+.secondary-nav > ul > li:first-child{
+    display: block;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    /* This position static stops the underline animation from running on the headers */
+    position: static;
+
+}
+
+
+/* Cards */
+
+.card{
+    color: #000000;
 }
 
 /* Center main content */
@@ -92,7 +234,7 @@ body{
         transform: translateY(-3em, -3em);
 }
 
-img{
+.items-container >img{
     margin: 25px;
     max-width: 100%;
 }
@@ -111,7 +253,7 @@ img{
     bottom: 2rem;
 }
 
-.items-container > button{
+button{
     font-weight: 700;
     font-size: 18px;
     background-color: #FFFFFF;
@@ -122,6 +264,15 @@ img{
     cursor: pointer;
     width: 14rem;
     height: 4rem;
+}
+
+button:hover{
+    -moz-transition: none;
+    -webkit-transition: none;
+        transition: none;
+    border: 2px solid white;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 @media screen and (max-width: 1320px) {
@@ -148,6 +299,12 @@ img{
 }
 
 @media screen and (max-width: 1317px) {
+
+
+    .burger-menu{
+        
+        /* display: block; */
+    }
     #circle-top-left{
         top: -60vw;
         left: -65vw;
@@ -166,6 +323,7 @@ img{
 }
 
 @media screen and (max-height: 508px){
+
     .items-container{
         /* Scales contents down */
         max-height: 100%;
