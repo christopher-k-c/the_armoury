@@ -173,6 +173,7 @@ img{
         -moz-transform: scale(0.5);
     }
     .items-container > #para-two{
+        display: none;
     }
 }
 
